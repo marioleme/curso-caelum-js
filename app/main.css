@@ -1,0 +1,15 @@
+body{
+	padding: 2em;
+	background-color: #3D4F5D;
+
+	
+
+}
+.container{
+	width: 600px;
+	margin: 0 auto;
+	border: 1px solid #000;
+	padding: 15px;
+	background-color: #fff
+}
+.error{border-color:red !important;}
