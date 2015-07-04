@@ -1,0 +1,13 @@
+ body{
+ 	padding: 2em;
+ }
+
+ .error{
+ 	border: 1px solid red !important;
+ }
+
+ .container{
+ 	width: 960px;
+ 	margin: 0 auto;
+ 	
+ }

@@ -11,7 +11,7 @@
  box.validate = function(e){
  // console.log(e.target);// Retorno o elemento que foi criado.
   e.preventDefault();
-  console.log(box.email.value);
+
    if (/^(\w|\.|\-)+\@\w+\.\w{2,3}(.\w{2})?$/.test(box.email.value)) {
 	   	box.email.classList.remove("error");
 	   	box.persist(box.email.value);
@@ -24,7 +24,7 @@
  };
  
  box.persist  = function(mail){
-      console.log(mail);
+    
       if(localStorage) {
           if (localStorage.contatos) {
           	var lista = JSON.parse(localStorage.contatos);
@@ -41,8 +41,14 @@
 
  box.refresh  = function(){
  	if(localStorage && localStorage.contatos){
- 		var lista = JSON.parse(localStorage);
- 		console.table(lista);
+ 		var contatos = JSON.parse(localStorage.contatos);
+ 		var html  = "" ;
+ 		contatos.forEach(function(contato){
+             html += "<li>"+contato.email+"</li>";
+
+ 		});
+ 		console.log(html);
+ 		box.list.innerHTML = html;
  	}
 
  };
@@ -50,6 +56,7 @@
  box.init     = function(){
   // box.add.onclick = box.validate; 
   box.add.addEventListener("click",box.validate);
+  box.refresh();
  }();
 
  console.log(box);
